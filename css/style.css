@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.container{
+    text-align: center;
+    box-shadow: 2px 15px  27px rgb(240, 133, 133);
+    width: 100%;
+    position: relative;
+    min-height: 480px;
+    position: relative;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    text-align: center;
+    border-radius: 25px;
+    background: #d96ec2;
+
+
+
+}
+
+.social-container{
+    height: 100px;
+    width: 300px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color:aqua
+
+}
+
+.social-container a{
+    display:inline-block;
+    margin-left: 10px;
+    padding: 10px;
+    border-radius: 100px;
+}
+
+.social-container .fa-facebook{
+    color:rgb(111, 102, 213);
+    font-size: 1.9em;
+
+}
+
+.social-container .faa-google{
+    padding: 20px;
+    color:rgba(246, 51, 12, 0.747);
+    font-size: 2em;
+    
+
+}
+
+.social-container .fa-linkedin-in{
+
+    color: white;
+    background: blue;
+    border-radius: 50px;
+    padding: 5px;
+    font-size: 1.3em;
+
+}
+
+
+
+
+
+span{
+    font-size: 1.2em;
+    font-weight: 550;
+}
+
+input{
+    margin: 10px ;
+    width: 50%;
+    padding: 5px;
+    border: none;
+    background: rgb(242, 226, 226);
+    }
+
+button{
+    padding: 5px 20px;
+    border-radius: 20px;
+    margin: 10px;
+    background: red;
+    transform: scale(1.1);
+    text-transform: uppercase;
+    cursor: pointer;
+
+}
+
+button:active{
+    transform: scale(1);
+}
+
+p{
+    font-size: 1.5em;
+    font-weight: 450;
+    letter-spacing: 1px;/*space betwwen letters*/
+    line-height: 50px;/*margin betwwen lines*/
+
+}
+
+.container-frame{
+    position: absolute;   
+     left: 0px; 
+
+    width:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    background: peachpuff;
+    transform: translateX(0px);
+    transition: all 1s ease-in;
+    z-index: 1;
+    border-radius: 25px 0 0 25px;
+
+}
+
+.container-frame form{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+
+
+    
+}
+
+/*sign up*/
+.contSignUp{
+    z-index: 0;
+    opacity: 1;
+    
+
+}
+
+.contSignIn{
+    opacity: 1;
+    z-index: 1;
+}
+.container-overlay{
+    background: #d96ec2;
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    right: 0;
+    transform: translateX(0px);
+    transition: all 1s ease-in;
+    z-index: 1;/*swip over second half*/
+    border-radius: 0 25px 25px 0;
+
+
+}
+
+.overlay-panel{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+     align-items: center; 
+    text-align: center;
+    height: 100%;
+    transform: translateX(0px);
+    transition: all 1s ease-in;
+    background: transparent;
+    border-radius: 0 25px 25px 0;
+
+    
+}
+
+/*sign in on right side*/
+.left-ovelay{
+    opacity: 0;
+    z-index: 0;
+}
+/*sign up on right side*/
+.right-overlay{
+    z-index: 1;
+    opacity: 1;
+}
+
+
+/*add swip class when click signup*/
+
+
+.swip .container-overlay{
+    transform: translateX(-379px);
+    transition: transform 1s ease-in;
+    left: 379px;
+    z-index: 1;
+    border-radius: 25px 0 0 25px;
+
+}
+
+.swip .container-frame{ 
+    transform: translateX(100%);/* % for taking all half space*/
+    transition: all 1s ease-in;
+    border-radius: 0 25px  25px 0;
+
+
+
+}
+/*appear sign in left*/
+.swip .left-ovelay{
+
+    opacity: 1;
+    z-index: 1;
+    /* background: peachpuff; */
+
+}
+/*disappear sign up when go left*/
+.swip .right-overlay{
+    opacity: 0;
+    z-index: 0;
+
+}
+/*appear right */
+.swip .contSignUp{
+    opacity: 1;
+    z-index: 1;
+
+    /* background: #d96ec2; */
+
+
+}
+/*disappear sign in */
+.swip .contSignIn{
+    opacity: 0;
+    z-index: 0;
+}
